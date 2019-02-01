@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <link rel="icon" href="../favicon.ico" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <title>Twig</title>
+</head>
+<body style="background-color: black;">
+{% include "login.twig" %}
+{% include "nav.twig" %}
+
+
+
+
+{% block content %}
+   <div class="row justify-content-center"  style="background-color: black; color: aliceblue" > <h1>LES LABORATOIRES UMBRELLA CORPORATION</h1></div>
+
+    {% for labo in labos %}
+        <div class=" bg-gradient-secondary">
+    <div class="jumbotron"  style="background-color: #313335; color: aliceblue">
+        <div class="row justify-content-center">
+        <h1 class="display-4">#{{ labo.id }} {{ labo.name }}</h1></div>
+        <div class="row justify-content-center">
+            <p class="lead">{{ labo.experience |upper }}</p></div>
+        <hr class="my-4">
+        <h3>Les Cobayes</h3>
+        <ul class="row">
+        {% for cobaye in labo.cobayes %}
+       <li class="col-2" style="list-style: none;">
+        <a  href="controllerFocusCobaye.php?id={{ cobaye.id }}" role="button">#{{ cobaye.id }}{{ cobaye.last|upper }} </a>
+
+       </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+        </div>
+{% endfor %}
+
+{% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <link rel="icon" href="../favicon.ico"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <title>Twig</title>
+</head>
+<body style="background-color: black;">
+{% include "login.twig" %}
+{% include "nav.twig" %}
+<div class="row justify-content-center  jumbotron" style="background-color: #313335; color: aliceblue">
+    <div class="card col-6" style="margin: 5px;background-color: #767676">
+        <h5 class="row justify-content-center card-title" style="font-size: 4em">COBAYE #{{ cobaye.id }}#</h5>
+
+        <hr>
+
+
+        <div class="row justify-content-center card-body">
+            <div class="col-6">
+                <img src="{{ cobaye.large }}" alt="..." style="width: 95%;height: 95%"></div>
+            <div class="col-6">
+
+                <ul style="list-style: none">
+
+                    <li> {{ cobaye.title |upper }} {{ cobaye.last |upper }}</li>
+                    <li>PRENOM: {{ cobaye.first |upper }}</li>
+
+                    <li>DOB: {{ cobaye.dob |date('j F Y') }}</li>
+                    <li>AGE: {{ cobaye.age }} ans</li>
+
+                    <li>ADRESSE:</li>
+
+                    <li>{{ cobaye.street }}</li>
+                    <li>{{ cobaye.city }}</li>
+                    <li>{{ cobaye.State|upper }}</li>
+
+                    <li>NAT: {{ cobaye.nat }}</li>
+
+                    <li>{{ cobaye.gender|upper }}</li>
+
+                </ul>
+            </div>
+            <a href="controllerUpdateCobaye.php?id={{ cobaye.id }}"role="button"><button type="button" class="btn btn-primary">Update</button></a>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>

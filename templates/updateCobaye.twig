@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <link rel="icon" href="../favicon.ico" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <title>Twig</title>
+</head>
+<body style="background-color: black;">
+
+{% include "login.twig" %}
+{% include "nav.twig" %}
+<div class="row justify-content-center  jumbotron" style="background-color: #313335; color: aliceblue">
+    <div class="card col-8" style="margin: 5px;background-color: #767676">
+        <h5 class="row justify-content-center card-title" style="font-size: 4em">COBAYE #{{ cobaye.id }}#</h5>
+
+        <hr>
+
+
+        <div class="row justify-content-center card-body">
+            <div class="col-6">
+                <img src="{{ cobaye.large }}" alt="..." style="width: 60%;height: 60%"></div>
+            <div class="col-6">
+
+<form>
+
+                    <div class="col-12">
+                        <div class="form-group col-6">
+
+                           <label for="last" >NOM</label>
+                            <input value="{{ cobaye.last |upper }}" id="last" name="last"></div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-group col-6">
+
+                            <label for="first" >PRENOM</label>
+                            <input value="{{ cobaye.first |upper }}" id="first" name="first"></div>
+                    </div>
+
+<hr>
+
+                    <div class="col-12">ADRESSE:</div>
+
+                    <div class="col-12">
+                        <div class="form-group col-6">
+
+                            <label for="street" >RUE</label>
+                            <input value="{{ cobaye.street }}" id="street" name="street"></div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-group col-6">
+
+                            <label for="city" >VILLE</label>
+                            <input value="{{ cobaye.city }}" id="city" name="city"></div>                    </div>
+                    <div class="col-12">
+                        <div class="form-group col-6">
+
+                            <label for="state" >PAYS/ETAT</label>
+                            <input value="{{ cobaye.state }}" id="state" name="state"></div>
+                    </div>
+<hr>
+                    <div class="col-12">
+                        <div class="form-group col-6">
+
+                            <label for="nat" >NATIONALITE</label>
+                            <input value="{{ cobaye.nat }}" id="nat" name="nat"></div>
+                    </div>
+
+
+    <a href="controllerUpdateCobaye.php?id={{ cobaye.id }}"role="button"><button type="button" class="btn btn-primary">Update</button></a>
+
+</form>
+            </div>
+
+        </div>
+    </div>
+</div>
+</div>
+
+
+
+
+</body>
+</html>

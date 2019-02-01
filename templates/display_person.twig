@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <link rel="icon" href="../favicon.ico" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <title>Twig</title>
+</head>
+<body style="background-color: black;">
+{% include "login.twig" %}
+{% include "nav.twig" %}
+
+
+
+{% block content %}
+
+<div class="row justify-content-center"  style="background-color: #313335; color: aliceblue">
+        <h1>COBAYES UMBRELLA CORP</h1>
+</div>
+    <div class="jumbotron"  style="background-color: #313335; ">
+    <div class="row justify-content-center">
+        {% for cobaye in tab %}
+
+            <div class="card col-3" style="margin: 5px;background-color: #767676">
+                <div class="row">
+                <h5 class="card-title col-6" style="margin-top: 15%;">COBAYE #{{ cobaye.id }}</h5>
+                <img src="{{ cobaye.large}}" class="card-img-top col-6" alt="..." style="width: 20%;height: 100%;margin-top: 2%;"></div>
+                <hr >
+                <div >
+                    <div class="card-body">
+
+                        <p class="card-text">
+                        <ul>
+
+                            <li>NOM:  {{ cobaye.last |upper}}</li>
+                            <li>PRENOM: {{ cobaye.first |upper }}</li>
+                            <li>DOB: {{ cobaye.dob |date('j F Y')}}</li>
+                            <li>AGE: {{ cobaye.age }} ans</li>
+                            <li>ADRESSE:</li>
+
+                                <li>{{ cobaye.street }}</li>
+                                <li>{{ cobaye.city|upper }}</li>
+                                <li>{{ cobaye.State|upper }}</li>
+
+                            <li>NAT: {{ cobaye.nat }}</li>
+
+                        </ul>
+
+
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+        {% endfor %}
+
+    </div>
+    </div>
+
+{% endblock %}
+</body>
+</html>
