@@ -37,8 +37,10 @@
     </form>
     </div>
     </div>
-    <div class="row justify-content-center"><h1>Please Login</h1></div>
 
+{% if nom is not empty %}
+    <div class="row justify-content-center"><h1>WELCOME DR {{ nom|upper }}</h1></div>
+{% endif %}
 {% endblock %}
 
 </body>

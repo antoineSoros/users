@@ -8,7 +8,7 @@ use Doctrine\ORM\Tools\Setup;
 use Doctrine\ORM\EntityManager;
 
 // chemin vers le répertoire des entités
-$paths = array(realpath(__DIR__) . "/model");
+$paths = array(ROOT. "/model");
 $isDevMode = true;
 
 // configuration de la source de donnée

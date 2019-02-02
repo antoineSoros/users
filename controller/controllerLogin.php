@@ -7,6 +7,7 @@ $options = ["options"=>
 
     ]];
 
+$nom = $_COOKIE['name']  ;
 $firstname = filter_input(INPUT_POST,'firstname',FILTER_VALIDATE_REGEXP,$options);
 if(!isset($firstname) || $firstname === false){
     $errorFirst = "PRENOM INVALIDE";
@@ -22,5 +23,4 @@ if(!isset($password) || $password === false){
 
 
 
-
-echo $twig->render('login.twig',['errorLast'=>$errorLast,'errorFirst'=>$errorFirst,'errorPass'=>$errorPass]);}
+echo $twig->render('login.twig',['errorLast'=>$errorLast,'errorFirst'=>$errorFirst,'errorPass'=>$errorPass,'nom'=>$nom]);}

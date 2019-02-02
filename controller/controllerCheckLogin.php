@@ -12,8 +12,12 @@ $query->setParameter(':password',$password);
 
 $result = $query->getResult();
 if( count($result)!==0){
+    setcookie("name", $nom);
+    include "./controllerUser.php";
 
-    include './controllerUser.php';
+
+
 }else{
-    echo $twig->render('checkLogin.twig');
+    echo $twig->render('checkLogin.twig',["nom"=>$nom]);
+    setcookie("name", "", time() - 3600);
 }
