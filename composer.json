@@ -3,7 +3,8 @@
     "description": "appli doctrine",
     "require": {
         "doctrine/orm": "^2.6",
-        "twig/twig": "^2.0"
+        "twig/twig": "^2.0",
+        "twbs/bootstrap": "4.2.1"
 
     },
     "require-dev": {

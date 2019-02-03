@@ -7,6 +7,7 @@
     <title>Twig</title>
 </head>
 <body style="background-color: black;">
+
 {% include "login.twig" %}
 {% include "nav.twig" %}
 
@@ -14,11 +15,11 @@
 
 
 {% block content %}
-   <div class="row justify-content-center"  style="background-color: black; color: aliceblue" > <h1>LES LABORATOIRES UMBRELLA CORPORATION</h1></div>
+   <div class="row justify-content-center"  style="background-color:black; color: aliceblue" > <h1>LES LABORATOIRES UMBRELLA CORPORATION</h1></div>
 
     {% for labo in labos %}
         <div class=" bg-gradient-secondary">
-    <div class="jumbotron"  style="background-color: #313335; color: aliceblue">
+    <div class="jumbotron"  style="background-color: #313335; color: aliceblue; margin-top: 5%;">
         <div class="row justify-content-center">
         <h1 class="display-4">#{{ labo.id }} {{ labo.name }}</h1></div>
         <div class="row justify-content-center">

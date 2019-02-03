@@ -14,6 +14,7 @@
             <img src="../umbrella.png" class="col-6">
             <h1 class="display-4 col-6" style="color: aliceblue">UMBRELLA CORP</h1></div>
         </div>
+        {% if nom is  empty %}
     <div class="jumbotron col-6 "  style="background-color: black">
     <form action="controllerCheckLogin.php" method="post" style="color: aliceblue">
         <div class="row justify-content-center">
@@ -37,7 +38,31 @@
     </form>
     </div>
     </div>
+{% endif %}
+{% if nom is not empty %}
+    <div class="jumbotron col-6 "  style="background-color: black">
+        <form action="controllerCheckLogin.php" method="post" style="color: aliceblue">
+            <div class="row justify-content-center">
+                <div class="form-group col-6">
 
+                </div>
+                <div class="form-group col-6">
+
+
+                </div>
+                <div class="form-group col-6">
+
+
+                </div>
+                <div class="row justify-content-end">
+                <div class="col-6"></div>
+
+                    <button type="submit" class="btn btn-primary col-12">LOGOUT</button></div>
+            </div>
+        </form>
+    </div>
+    </div>
+    {% endif %}
 {% if nom is not empty %}
     <div class="row justify-content-center"><h1>WELCOME DR {{ nom|upper }}</h1></div>
 {% endif %}
